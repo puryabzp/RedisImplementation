@@ -7,7 +7,8 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(script_dir)
 
 # Read configuration from config.json in the parent directory
-with open('../config.json') as config_file:
+config_file_path = os.path.join(parent_dir, 'config.json')
+with open(config_file_path) as config_file:
     config = json.load(config_file)
 
 server_host = config["server"]["host"]
